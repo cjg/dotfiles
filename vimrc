@@ -33,8 +33,26 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'nanotech/jellybeans.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
+Plug 'farmergreg/vim-lastplace'
+Plug 'sickill/vim-pasta'
+Plug 'junegunn/vim-peekaboo'
 
+
+Plug 'sheerun/vim-polyglot'
+
+let g:PHP_noArrowMatching = 1
+let g:vim_markdown_new_list_item_indent = 0
 call plug#end()
+
+let g:pasta_disabled_filetypes = ['fugitive']
+let mapleader = "\<space>"
+
+nmap <leader>q :Sayonara!<cr>
+nmap <leader>k :nohlsearch<cr>
+
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 colorscheme jellybeans
 
@@ -45,9 +63,11 @@ set laststatus=2
 let g:airline_powerline_fonts = 1
 " Show PASTE if in paste mode
 let g:airline_detect_paste=1
+let g:airline_skip_empty_sections=1
 
 " Show airline for tabs too
 let g:airline#extensions#tabline#enabled = 1
+set noshowmode
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -167,7 +187,7 @@ command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.org
 
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
+" provide custom statusline: lightline.vim, vim-airline
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
