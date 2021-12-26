@@ -14,6 +14,7 @@ set number
 set showcmd
 set incsearch
 set hlsearch
+set cursorline 
 
 syntax on
 
@@ -30,9 +31,12 @@ call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'nanotech/jellybeans.vim'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
+colorscheme jellybeans
 
 filetype plugin indent on
 
@@ -183,4 +187,5 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
 
