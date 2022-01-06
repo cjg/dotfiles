@@ -4,7 +4,7 @@ set encoding=utf-8
 set hidden
 set nobackup
 set nowritebackup
-set cmdheight=2
+set cmdheight=1
 set updatetime=300
 set shortmess+=c
 set signcolumn=yes
@@ -15,6 +15,7 @@ set showcmd
 set incsearch
 set hlsearch
 set cursorline 
+set expandtab 
 
 syntax on
 
